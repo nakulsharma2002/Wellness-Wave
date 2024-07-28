@@ -1,0 +1,565 @@
+/* App.css */
+*{
+  margin:0px;
+  padding:0px;
+}
+.App {
+  text-align: center;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9998; /* Ensure the overlay is on top */
+}
+
+.popup-content {
+  height: 547px;
+  background: white;
+  width:853px;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 9999; /* Ensure the popup content is on top of the overlay */
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.social-button {
+  display: block;
+  margin: 10px 0;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.signin-link {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.image1{
+  height:492px;
+    
+  width: 100%;
+}
+
+
+.message-input{
+  display: flex;
+}
+
+#imagee{
+  width:1200px;
+  height:600px;
+}
+
+
+
+
+
+#carde{
+  max-width: 1518px;
+  width: 100%;
+  height: 100px;
+}
+#rowe{
+  height: 100px;
+}
+#cole{
+  width: 89px;
+  height: 95px;
+  margin: 26px 44px;
+}
+#imagep{
+  height:53px
+}
+
+
+
+.register-image{
+  height: 410px;
+  width: 100%;
+  padding-left: 23px;
+}
+
+#card-ka-var{
+    max-width: 1361px;
+    height: 88px;
+    width: 1328px;
+    margin: auto;
+    background-color: aliceblue;
+    flex-wrap: wrap;
+
+}
+#rowcard{
+  display:flex;
+  width:1571px
+
+}
+#columncard{
+  width:744px
+}
+#cardImage{
+  height: 560px;
+  width: 800px;
+}
+.colmd{
+  width: 760px;
+  padding-top: 48px;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 700px) {
+  #root {
+      display: flex;
+      width: 1537px;
+      margin: auto;
+      max-width: 1563px;
+      padding-top: 4px;
+      flex-direction: column;
+ 
+  }
+
+  .main {
+    height: auto;
+  }
+
+  .image1 {
+    height: auto;
+    width: 100%;
+  }
+  .ourgallery{
+    text-align: center;
+    width: 893px;
+    padding-top: 33px;
+  }
+  .titleonimage {
+    height: auto;
+  }
+
+  .title {
+    padding-left: 10px;
+  }
+
+  .para1 {
+    padding-left: 10px;
+  }
+
+  .change_windows {
+    width: 100%;
+    height: auto;
+  }
+
+  .sabkuch {
+    display: flex;
+    margin: auto;
+    max-width: 100%;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .every {
+    padding-right: 0;
+    padding-bottom: 12px;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+
+  hr {
+    color: black;
+    width: 100%;
+  }
+
+  .collapse {
+    max-width: 100%;
+  }
+
+  .card {
+    width: 1522px;
+    text-align: center;
+    padding-left: 23px;
+  }
+  form{
+    height: 459px;
+  }
+  .btn-group {
+    height: auto;
+    width: 100%;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    width: 1212px;
+    flex-direction: row;
+  }
+
+  .navbar-light {
+    width: 1541px;
+    padding-top: 0;
+  }
+
+  .container-fluid {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .d-flex {
+    width: 100%;
+    padding: 0;
+  }
+
+  .form-control {
+    width: 100%;
+  }
+
+  .btn-outline-success {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .AppButton {
+    padding: 4px;
+    height: auto;
+    width: 100%;
+    background-color: white;
+    min-height: 6vh;
+  }
+
+  .App-header button {
+    font-size: 12px;
+    height: 45px;
+    width: 100%;
+  }
+
+  .popup-contents {
+    height: auto;
+    background-color: white;
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 9999;
+  }
+
+  .over {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .done {
+    width: 100%;
+  }
+
+  .combine {
+    width: 100%;
+  }
+
+  .social-button img {
+    height: 24px;
+    width: 10%;
+  }
+
+  .signin-link {
+    cursor: pointer;
+  }
+
+  .popup-content {
+    display: flex;
+    width: 930px;
+    height: 561px;
+    flex-direction: column;
+  }
+}
+
+
+
+
+
+
+.audio-player {
+  text-align: center;
+}
+
+#waveform {
+  width: 100%;
+  height: 128px;
+  margin: 20px 0;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 480px) {
+  #root {
+    display: flex;
+    width: 1541px;
+    margin: auto;
+    max-width: 1539px;
+    padding-top: 23px;
+    flex-direction: column;
+  }
+
+  .main {
+    height: auto;
+  }
+  .App{
+    display: flex;
+    width: 23%;
+    height: 40px;
+    flex-wrap: wrap;
+    padding-left: 71px;
+  }
+  .image1 {
+    height: auto;
+    width: 100%;
+  }
+
+  .titleonimage {
+    height: auto;
+  }
+  .background-img{
+    height:396px;
+    width:100%
+  }
+  .title {
+    padding-left: 10px;
+    font-size: 1.5em; /* Adjust font size as needed */
+    text-align: center;
+  }
+  .para1 {
+    padding-left: 10px;
+    font-size: 1em; /* Adjust font size as needed */
+    text-align: center;
+  }
+  .change_windows {
+    width: 100%;
+    height: auto;
+  }
+
+  .sabkuch {
+    display: flex;
+    margin: auto;
+    max-width: 100%;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .every {
+    padding-right: 0;
+    padding-bottom: 12px;
+  }
+
+  .btn-primary {
+    width: 100%;
+  }
+
+  hr {
+    color: black;
+    width: 100%;
+  }
+
+  .collapse {
+    max-width: 100%;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+    margin: auto;
+  }
+
+  .btn-group {
+    height: auto;
+    width: 100%;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+    text-align: center; /* Center the content */
+  }
+  .navbar-light {
+    width: 100%;
+    padding-top: 0;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+  }
+
+  .container-fluid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .d-flex {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+  }
+
+  .form-control {
+    width: 100%;
+  }
+
+  .btn-outline-success {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+
+
+  .App-header {
+    padding: 4px;
+    height: auto;
+    width: 100%;
+    background-color: white;
+  }
+
+  .App-header button {
+    font-size: 12px;
+    height: 45px;
+    width: 100%;
+  }
+
+  .popup-contents {
+    display: flex;
+    width: 957px;
+    height: 600px;
+    flex-direction: column;
+  }
+
+  .over {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .done {
+    width: 100%;
+  }
+
+  .combine {
+    width: 100%;
+  }
+
+  .social-button img {
+    height: 24px;
+    width: 10%;
+  }
+
+  .signin-link {
+    cursor: pointer;
+  }
+
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 480px) {
+  #root {
+    display: flex;
+    width: 1541px;
+    margin: auto;
+    max-width: 1539px;
+    padding-top: 23px;
+    flex-direction: column;
+  }
+}
