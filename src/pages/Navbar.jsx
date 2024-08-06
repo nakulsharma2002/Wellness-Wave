@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import Popup from 'D:\\Desktop\\Wellnesswave\\wellness-wave\\src\\pages\\Popup.jsx';
-import 'D:\\Desktop\\Wellnesswave\\wellness-wave\\src\\App.css';
+import Popup from './Popup';
+
 
 const Navbar = () => {
   return (
     <>
       <nav>
-        <Navbar_Values/>
+        <Navbar_Values  />
       </nav>
     </>
   );
@@ -16,7 +16,6 @@ const Navbar = () => {
 export default Navbar;
 
 function Navbar_Values() {
-
   const [showPopup, setShowPopup] = useState(false);
   const [popupPage, setPopupPage] = useState('register');
 
@@ -51,26 +50,22 @@ function Navbar_Values() {
               <Link className="nav-link" to="/chat">Chat</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/meditation">Meditation</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/audio">Audio</Link>
+              <Link className="nav-link" to="/audio">Meditation</Link>
             </li>
           </ul>
         </div>
       </div>
-    
       <div className="App" style={{ display: 'flex', width: '23%', height: '40px', flexWrap: 'wrap', paddingLeft: '33px' }}>
         <header className="App-header" style={{ padding: '0px', height: '0px', width: '133px', backgroundColor: '#f4f4ff', minHeight: '6vh' }}>
-          <button style={{ fontSize: '12px', height: '36px', width: '124px' }} onClick={() => handleOpenPopup('register') } className="AppButton">Create Account</button>
+          <button style={{ fontSize: '12px', height: '36px', width: '124px' }} onClick={() => handleOpenPopup('register')} className="AppButton">Create Account</button>
         </header>
         {showPopup && <Popup page={popupPage} onClose={handleClosePopup} onSwitchPage={handleOpenPopup} />}
       </div>
       <div>
-        {/* {weatherDetails ? (
+        {/* {sharedValue ? (
           <div>
-            <h2>{weatherDetails.weather[0].description}</h2>
-            <p>Temperature: {weatherDetails.main.temp}°C</p>
+            <h2>{sharedValue.weather[0].description}</h2>
+            <p>Temperature: {sharedValue.main.temp}°C</p>
           </div>
         ) : (
           <p>No weather details available</p>
@@ -79,10 +74,3 @@ function Navbar_Values() {
     </nav>
   );
 }
-
-
-
-
-
-
-

@@ -4,22 +4,26 @@ import MessageInput from './MessageInput';
 import { username } from '../Information/Username';
 import 'D:\\Desktop\\Wellnesswave\\wellness-wave\\src\\CSS\\Homecss.css';
 
-
 function Chat() {
   const [messages, setMessages] = useState([]);
+  const [selectedUsername, setSelectedUsername] = useState('');
 
   const handleSendMessage = (message) => {
     setMessages([...messages, { text: message, timestamp: new Date() }]);
+  };
+
+  const handleUsernameClick = (name) => {
+    setSelectedUsername(name);
   };
 
   return (
     <div style={{ display: 'flex', width: '100%', height: '670px' }}>
       <div style={{ width: '30%', height: '637px' }}>
         <Header />
-        <UserList />
+        <UserList onUsernameClick={handleUsernameClick} />
       </div>
       <div style={{ width: '70%', height: '700px' }}>
-        <ChatHeader />
+        <ChatHeader selectedUsername={selectedUsername} />
         <ChatMessages messages={messages} />
         <MessageInputContainer onSendMessage={handleSendMessage} />
       </div>
@@ -40,22 +44,20 @@ function Header() {
   );
 }
 
-function UserList() {
+function UserList({ onUsernameClick }) {
   return (
     <div style={{ height: '609px', width: '100%', backgroundColor: 'rgb(181 165 247)' }}>
-      {username.map((v,i)=>{
-      return(
-        <UserName items={v} key={i}/>
-      )
-    })} 
+      {username.map((v, i) => (
+        <UserName items={v} key={i} onClick={() => onUsernameClick(v.name)} />
+      ))}
     </div>
   );
 }
 
-function ChatHeader() {
+function ChatHeader({ selectedUsername }) {
   return (
     <div style={{ display: 'flex', height: '60px', width: '100%', backgroundColor: 'rgb(181 165 247)' }}>
-      <h1 style={{ fontSize: '34px', textAlign: 'center', padding: '13px 34px ' }}>Username</h1>
+      <h1 style={{ fontSize: '34px', textAlign: 'center', padding: '13px 34px ' }}>{selectedUsername || 'Username'}</h1>
     </div>
   );
 }
@@ -72,16 +74,20 @@ function ChatMessages({ messages }) {
 
 function MessageInputContainer({ onSendMessage }) {
   return (
-    <div style={{width: '100%', height: '77px' }}>
+    <div style={{ width: '100%', height: '77px' }}>
       <MessageInput onSendMessage={onSendMessage} />
     </div>
   );
 }
 
-function UserName({items}) {
+function UserName({ items, onClick }) {
   return (
-    <>
-    <div className="card mb-3" id="cars" style={{ maxWidth: '540px', backgroundColor: 'rgb(181 165 247)' ,border:'none',cursor:'pointer',borderBottom:'1px solid black'}}>
+    <div 
+      className="card mb-3" 
+      id="cars" 
+      style={{ maxWidth: '540px', backgroundColor: 'rgb(181 165 247)', border: 'none', cursor: 'pointer', borderBottom: '1px solid black' }}
+      onClick={onClick}
+    >
       <div className="row g-0" style={{ height: '84px' }}>
         <div className="col-md-4" style={{ width: '107px', height: '800px', padding: '19px' }}>
           <div style={{ height: '10px' }}>
@@ -95,8 +101,6 @@ function UserName({items}) {
         </div>
       </div>
     </div>
-
-    </>
   );
 }
 

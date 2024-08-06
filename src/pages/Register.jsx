@@ -1,42 +1,35 @@
 import React, { useState } from 'react';
-// import image1 from 'D:\\Desktop\\Wellnesswave\\wellness-wave\\src\\Images\\pexels-panther-1547248.jpg';
-// import google from 'D:\\Desktop\\Wellnesswave\\wellness-wave\\src\\Images\\pexels-panther-1547248.jpg';
-// import facebook from 'D:\\Desktop\\Wellnesswave\\wellness-wave\\src\\Images\\pexels-panther-1547248.jpg';
-import 'D:\\Desktop\\Wellnesswave\\wellness-wave\\src\\App.css';
 
 
-const Register = ({ onClose, onSignInClick }) => {
+const Register = ({onClose,onSignInClick}) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
   const [city, setCity] = useState('');
- 
 
   const handleSubmit = (e) => {
     e.preventDefault();
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=085ccc4a0fbb965caa669d173e6595e7&units=metric`)
       .then((res) => res.json())
       .then((finalRes) => {
-        if (finalRes.cod === "404") {
-          // setWeatherDetails(null);
+        if (finalRes.cod === '404') {
+          // Handle error case
         } else {
-         
-          console.log(finalRes);
-          
-          
+          // setSharedValue(finalRes);
+          console.log(finalRes)
         }
       });
   };
 
-  return ( 
+  return (
     <>
       <div className="popup-overlay">
         <div className="popup-content">
-          <button className="close-button" onClick={onClose} style={{color: 'black'}}>X</button>
-          <div style={{width: '100%', display: 'flex'}}>
-            <div style={{width: '50%'}}>
+          <button className="close-button" onClick={onClose} style={{ color: 'black' }}>X</button>
+          <div style={{ width: '100%', display: 'flex' }}>
+            <div style={{ width: '50%' }}>
               <h2>Create Account</h2>
               <form onSubmit={handleSubmit}>
                 <input
@@ -81,30 +74,26 @@ const Register = ({ onClose, onSignInClick }) => {
                   onChange={(e) => setCity(e.target.value)}
                   required
                 />
-                <button type="submit" style={{display: 'flex', width: '100%', borderRadius: '34px', justifyContent: 'center'}}>Create Account</button>
+                <button type="submit" style={{ display: 'flex', width: '100%', borderRadius: '34px', justifyContent: 'center' }}>Create Account</button>
               </form>
-              <button className="social-button" style={{width: '100%', paddingLeft: '12px'}}>
-                <img  src={`${process.env.PUBLIC_URL}/Images/apple.jpg`} style={{height: '24px', width: '10%'}} alt='1' />Sign up with Facebook
+              <button className="social-button" style={{ width: '100%', paddingLeft: '12px' }}>
+                <img src={`${process.env.PUBLIC_URL}/Images/apple.jpg`} style={{ height: '24px', width: '10%' }} alt='1' />Sign up with Facebook
               </button>
-              <button className="social-button" style={{width: '100%', paddingLeft: '12px'}}>
-                <img src={`${process.env.PUBLIC_URL}/Images/apple.jpg`} style={{height: '24px', width: '10%'}} alt='1' />Sign up with Google
+              <button className="social-button" style={{ width: '100%', paddingLeft: '12px' }}>
+                <img src={`${process.env.PUBLIC_URL}/Images/apple.jpg`} style={{ height: '24px', width: '10%' }} alt='1' />Sign up with Google
               </button>
             </div>
-            <div style={{width: '50%', height: '600px'}}>
-              <p style={{paddingTop: '51px'}}>
+            <div style={{ width: '50%', height: '600px' }}>
+              <p style={{ paddingTop: '51px' }}>
                 Already have an account? <span className="signin-link" onClick={onSignInClick}>Sign In</span>
               </p>
-              <img  src={`${process.env.PUBLIC_URL}/Images/apple.jpg`} alt='Chatting' className='register-image' />
+              <img src={`${process.env.PUBLIC_URL}/Images/apple.jpg`} alt='Chatting' className='register-image' />
             </div>
           </div>
         </div>
       </div>
-      
     </>
   );
 };
 
 export default Register;
-
-
-
